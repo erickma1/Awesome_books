@@ -1,37 +1,37 @@
 // Checking if local storage is empty then add an empty array
-if (localStorage.getItem("Added Books") == null) {
-    localStorage.setItem("Added Books", JSON.stringify([]));
-  }
-  
-  // store data into local storage
-  const storeData = JSON.parse(localStorage.getItem("Added Books"));
-  
-  function updateData() {
-    localStorage.setItem("Added Books", JSON.stringify(storeData));
-  }
-  
-  // Getting values from input fields
-  const form = document.querySelector("form");
-  form.addEventListener("submit", (e) => {
-    const title = document.querySelector(".title");
-    const author = document.querySelector(".author");
-    e.preventDefault();
-    addNewdata(title.value, author.value);
-  });
-  
-  function createBooks(arr) {
-    let books = "";
-    for (let i = 0; i < arr.length; i += 1) {
-      books += `
+if (localStorage.getItem('Added Books') == null) {
+  localStorage.setItem('Added Books', JSON.stringify([]));
+}
+
+// store data into local storage
+const storeData = JSON.parse(localStorage.getItem('Added Books'));
+
+function updateData() {
+  localStorage.setItem('Added Books', JSON.stringify(storeData));
+}
+
+// Getting values from input fields
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+  const title = document.querySelector('.title');
+  const author = document.querySelector('.author');
+  e.preventDefault();
+  addNewdata(title.value, author.value);
+});
+
+function createBooks(arr) {
+  let books = '';
+  for (let i = 0; i < arr.length; i += 1) {
+    books += `
           ${arr[i].title}<br>
           ${arr[i].author}<br>
           <button onclick="removeBook('${i}')">Remove</button>
           <hr/>
           `;
-    }
-    return books;
+  }
+  return books;
 }
-  
+
 // Displaying data to the UI from local storage
 function displayBooks() {
   const listOfBooks = document.querySelector('.container');
@@ -40,13 +40,13 @@ function displayBooks() {
           ${createBooks(storeData)}
           </p>
   `;
-};
+}
 
-//Adding new data in the local storage 
+// Adding new data in the local storage
 function addNewdata(bookTitle, bookAuthor) {
   const Book = {
-      title: bookTitle,
-      author: bookAuthor,
+    title: bookTitle,
+    author: bookAuthor,
   };
   storeData.push(Book);
   updateData();
@@ -61,4 +61,3 @@ function removeBook(i) {
 }
 
 window.onload = displayBooks();
-  
