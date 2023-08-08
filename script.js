@@ -10,15 +10,6 @@ function updateData() {
   localStorage.setItem('Added Books', JSON.stringify(storeData));
 }
 
-// Getting values from input fields
-const form = document.querySelector('form');
-form.addEventListener('submit', (e) => {
-  const title = document.querySelector('.title');
-  const author = document.querySelector('.author');
-  e.preventDefault();
-  addNewdata(title.value, author.value);
-});
-
 function createBooks(arr) {
   let books = '';
   for (let i = 0; i < arr.length; i += 1) {
@@ -53,11 +44,21 @@ function addNewdata(bookTitle, bookAuthor) {
   displayBooks();
 }
 
+// Getting values from input fields
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+  const title = document.querySelector('.title');
+  const author = document.querySelector('.author');
+  e.preventDefault();
+  addNewdata(title.value, author.value);
+});
+
 // Removing data from local storage
+/* eslint-disable */
 function removeBook(i) {
   storeData.splice(i, 1);
   updateData();
   displayBooks();
 }
-
+/* eslint-enable */
 window.onload = displayBooks();
