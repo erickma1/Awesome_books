@@ -54,11 +54,11 @@ form.addEventListener('submit', (e) => {
 });
 
 // Removing data from local storage
-/* eslint-disable */
+/* eslint-disable no-unused-vars */
 function removeBook(i) {
   storeData.splice(i, 1);
   updateData();
   displayBooks();
 }
-/* eslint-enable */
+
 window.onload = displayBooks();
