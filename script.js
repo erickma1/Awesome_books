@@ -1,64 +1,62 @@
-// Checking if local storage is empty then add an empty array
-if (localStorage.getItem('Added Books') == null) {
-  localStorage.setItem('Added Books', JSON.stringify([]));
-}
+class BookManager {
+  constructor() {
+    this.storeKey = 'Added Books';
+    this.storeData = JSON.parse(localStorage.getItem(this.storeKey)) || [];
+    this.form = document.querySelector('form');
+    this.listOfBooks = document.querySelector('.container');
 
-// store data into local storage
-const storeData = JSON.parse(localStorage.getItem('Added Books'));
+    this.form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      this.addNewData();
+    });
 
-function updateData() {
-  localStorage.setItem('Added Books', JSON.stringify(storeData));
-}
-
-function createBooks(arr) {
-  let books = '';
-  for (let i = 0; i < arr.length; i += 1) {
-    books += `
-          ${arr[i].title}<br>
-          ${arr[i].author}<br>
-          <button onclick="removeBook('${i}')">Remove</button>
-          <hr/>
-          `;
+    this.displayBooks();
   }
-  return books;
+
+  updateData() {
+    localStorage.setItem(this.storeKey, JSON.stringify(this.storeData));
+  }
+
+  createBooks() {
+    let books = '';
+    for (let i = 0; i < this.storeData.length; i += 1) {
+      books += `
+          ${this.storeData[i].title}<br>
+          ${this.storeData[i].author}<br>
+          <button onclick="bookManager.removeBook('${i}')">Remove</button>
+          <hr/>
+        `;
+    }
+    return books;
+  }
+
+  displayBooks() {
+    this.listOfBooks.innerHTML = `
+        <p>
+          ${this.createBooks()}
+        </p>
+      `;
+  }
+
+  addNewData() {
+    const title = document.querySelector('.title');
+    const author = document.querySelector('.author');
+    const book = {
+      title: title.value,
+      author: author.value,
+    };
+    this.storeData.push(book);
+    this.updateData();
+    this.displayBooks();
+    title.value = '';
+    author.value = '';
+  }
+
+  removeBook(i) {
+    this.storeData.splice(i, 1);
+    this.updateData();
+    this.displayBooks();
+  }
 }
-
-// Displaying data to the UI from local storage
-function displayBooks() {
-  const listOfBooks = document.querySelector('.container');
-  listOfBooks.innerHTML = `
-         <p>
-          ${createBooks(storeData)}
-          </p>
-  `;
-}
-
-// Adding new data in the local storage
-function addNewdata(bookTitle, bookAuthor) {
-  const Book = {
-    title: bookTitle,
-    author: bookAuthor,
-  };
-  storeData.push(Book);
-  updateData();
-  displayBooks();
-}
-
-// Getting values from input fields
-const form = document.querySelector('form');
-form.addEventListener('submit', (e) => {
-  const title = document.querySelector('.title');
-  const author = document.querySelector('.author');
-  e.preventDefault();
-  addNewdata(title.value, author.value);
-});
-
-// Removing data from local storage
 /* eslint-disable no-unused-vars */
-function removeBook(i) {
-  storeData.splice(i, 1);
-  updateData();
-  displayBooks();
-}
-
-window.onload = displayBooks();
+const bookManager = new BookManager();
