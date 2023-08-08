@@ -30,5 +30,35 @@ if (localStorage.getItem("Added Books") == null) {
           `;
     }
     return books;
-  }
+}
+  
+// Displaying data to the UI from local storage
+function displayBooks() {
+  const listOfBooks = document.querySelector('.container');
+  listOfBooks.innerHTML = `
+         <p>
+          ${createBooks(storeData)}
+          </p>
+  `;
+};
+
+//Adding new data in the local storage 
+function addNewdata(bookTitle, bookAuthor) {
+  const Book = {
+      title: bookTitle,
+      author: bookAuthor,
+  };
+  storeData.push(Book);
+  updateData();
+  displayBooks();
+}
+
+// Removing data from local storage
+function removeBook(i) {
+  storeData.splice(i, 1);
+  updateData();
+  displayBooks();
+}
+
+window.onload = displayBooks();
   
