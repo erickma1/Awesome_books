@@ -23,7 +23,7 @@ class BookManager {
       books += `
          <section id="books">
          <article class="books-container ">
-         ${this.storeData[i].title}
+         ${this.storeData[i].title} by
           ${this.storeData[i].author}<br>
           <button class="remove-btn" onclick="bookManager.removeBook('${i}')">Remove</button>
           <article/>
