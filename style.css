@@ -23,6 +23,22 @@ h1 {
   border: 1px solid #160606;
 }
 
+.books-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  position: relative;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+#books {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid #333333a0;
+}
+
 .remove-btn {
   border: 1px solid red;
   font-family: Poppins, serif, sans serif;
@@ -35,6 +51,7 @@ h1 {
   cursor: pointer;
   font-weight: 500;
   font-size: 17px;
+  margin-left: auto;
 }
 
 .container {
