@@ -1,4 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@100;300;400;700&family=Montserrat:wght@100;200;300;400;500;600&family=Poppins:wght@100;200;300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fffcfc;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.title {
+  font-family: 'Times New Roman', Times, serif, sans serif;
+  background-color: #622823;
+  border: 1px solid #160606;
+}
+
+.books-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  position: relative;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+#books {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid #333333a0;
+}
+
+.remove-btn {
+  font-family: Poppins, serif, sans serif;
+  background-color: #ccb6b4;
+  border: 1px solid #ccb6b4;
+  border-radius: 8px;
+  padding: 5px 6px 5px 6px;
+  text-align: right;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 17px;
+  margin-left: auto;
+}
+
+.container {
+  border: 2px solid #ccb6b4;
+  font-family: 'Poppins', sans-serif;
+}
+
+.main-container {
+  margin: 10% auto;
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccb6b4;
+  background-color: #ffe4e1;
+  border-radius: 20px;
+}
+
+input[type=text],
+select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccb6b4;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #ccb6b4;
+  font-family: 'Poppins', sans-serif;
+}
+
+input[type=text] {
+  width: 50%;
+  color: #000;
+  padding: 14px 20px;
+  margin: 4px 0;
+  border: 1px solid #ccb6b4;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #ccb6b4;
+  font-family: 'Poppins', sans-serif;
+}
+
+.add-btn-container {
+  margin-left: 398px;
+}
+
+.add-btn {
+  font-family: Poppins, serif, sans serif;
+  background-color: #ccb6b4;
+  border: 1px solid #ccb6b4;
+  border-radius: 8px;
+  padding: 5px 20px 5px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.form-container {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
 }
