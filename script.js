@@ -21,10 +21,13 @@ class BookManager {
     let books = '';
     for (let i = 0; i < this.storeData.length; i += 1) {
       books += `
-         <p class="title">${this.storeData[i].title}</p><br>
+         <section id="books">
+         <article class="books-container ">
+         ${this.storeData[i].title}
           ${this.storeData[i].author}<br>
           <button class="remove-btn" onclick="bookManager.removeBook('${i}')">Remove</button>
-          <hr/>
+          <article/>
+          </section>
         `;
     }
     return books;
