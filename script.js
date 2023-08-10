@@ -23,7 +23,7 @@ class BookManager {
       books += `
           ${this.storeData[i].title}<br>
           ${this.storeData[i].author}<br>
-          <button onclick="bookManager.removeBook('${i}')">Remove</button>
+          <button class="remove-btn" onclick="bookManager.removeBook('${i}')">Remove</button>
           <hr/>
         `;
     }
