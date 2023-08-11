@@ -119,14 +119,23 @@ switch (day) {
   case 6:
     day = 'Saturday';
     break;
+  default:
 }
 
 output.innerHTML = day;
-date.innerHTML = ndate;
+// let date;
+this.date = document.getElementById('date');
+this.date.innerHTML = ndate;
 
 /* Visited menu */
 
 const links = document.querySelectorAll('.links li');
+
+function resetLinks() {
+  links.forEach((li) => {
+    li.classList.remove('active');
+  });
+}
 
 links.forEach((li) => {
   li.addEventListener('click', () => {
@@ -134,9 +143,3 @@ links.forEach((li) => {
     li.classList.add('active');
   });
 });
-
-function resetLinks() {
-  links.forEach((li) => {
-    li.classList.remove('active');
-  });
-}
