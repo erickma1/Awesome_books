@@ -15,8 +15,25 @@ class BookManager {
       e.preventDefault();
       this.addNewData();
     });
-//methods for display
 
+    this.list.addEventListener('click', () => {
+      this.listSection.style.display = 'block';
+      this.contactSection.style.display = 'none';
+      this.addNewSction.style.display = 'none';
+    });
+
+    this.contact.addEventListener('click', () => {
+      this.contactSection.style.display = 'block';
+      this.addNewSction.style.display = 'none';
+      this.listSection.style.display = 'none';
+    });
+
+    this.addNew.addEventListener('click', () => {
+      this.addNewSction.style.display = 'block';
+      this.contactSection.style.display = 'none';
+      this.listSection.style.display = 'none';
+    });
+        
     this.displayBooks();
   }
 
