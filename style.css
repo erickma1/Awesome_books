@@ -216,3 +216,11 @@ footer a:hover {
   color: #5454b2;
   font-weight: 500;
 }
+
+/* Date */
+
+.date-container {
+  display: flex;
+  justify-content: end;
+  margin-right: 30px;
+}
