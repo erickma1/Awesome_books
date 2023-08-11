@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #FFFCFC;
+  background-color: #fffcfc;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -41,10 +41,9 @@ h1 {
 }
 
 .remove-btn {
-  border: 1px solid red;
   font-family: Poppins, serif, sans serif;
-  background-color: #CCB6B4;
-  border: 1px solid #CCB6B4;
+  background-color: #ccb6b4;
+  border: 1px solid #ccb6b4;
   border-radius: 8px;
   padding: 5px 6px 5px 6px;
   text-align: right;
@@ -56,8 +55,8 @@ h1 {
 }
 
 .container {
-  border: 2px solid #CCB6B4;
-  font-family: 'Poppins';
+  border: 2px solid #ccb6b4;
+  font-family: 'Poppins', sans-serif;
 }
 
 #add-book {
@@ -68,20 +67,21 @@ h1 {
   margin: 6% auto;
   width: 50%;
   padding: 10px;
-  border: 1px solid #CCB6B4;
-  background-color: #FFE4E1;
+  border: 1px solid #ccb6b4;
+  background-color: #ffe4e1;
   border-radius: 20px;
 }
 
-input[type=text], select {
+input[type=text],
+select {
   width: 50%;
   padding: 12px 20px;
   margin: 4px 0;
   display: inline-block;
-  border: 1px solid #CCB6B4;
+  border: 1px solid #ccb6b4;
   border-radius: 4px;
   box-sizing: border-box;
-  background-color: #CCB6B4;
+  background-color: #ccb6b4;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -90,10 +90,10 @@ input[type=text] {
   color: #000;
   padding: 14px 20px;
   margin: 4px 0;
-  border: 1px solid #CCB6B4;
+  border: 1px solid #ccb6b4;
   border-radius: 4px;
   cursor: pointer;
-  background-color:#CCB6B4;
+  background-color: #ccb6b4;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -156,8 +156,8 @@ input[type=text] {
 
 .add-btn {
   font-family: Poppins, serif, sans serif;
-  background-color: #CCB6B4;
-  border: 1px solid #CCB6B4;
+  background-color: #ccb6b4;
+  border: 1px solid #ccb6b4;
   border-radius: 8px;
   padding: 5px 20px 5px 20px;
   text-decoration: none;
@@ -170,7 +170,7 @@ input[type=text] {
 .form-container {
   margin: 0 auto;
   display: block;
-  text-align:center;
+  text-align: center;
 }
 
 footer {
@@ -207,6 +207,16 @@ footer a:hover {
   margin: 5px;
 }
 
+li:hover,
+li.active {
+  color: #5454b2;
+}
+
+li:hover a,
+li.active a {
+  color: #ddd;
+}
+
 .nav ul li {
   list-style-type: none;
   padding: 0 25px;
@@ -218,16 +228,6 @@ footer a:hover {
   color: #5454b2;
   font-weight: 500;
   background: #262626;
-}
-
-li:hover,
-li.active {
-  color: #5454b2;
-}
-
-li:hover a,
-li.active a {
-  color: #ddd;
 }
 
 /* Date */

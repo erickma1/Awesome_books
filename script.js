@@ -33,7 +33,7 @@ class BookManager {
       this.contactSection.style.display = 'none';
       this.listSection.style.display = 'none';
     });
-        
+
     this.displayBooks();
   }
 
@@ -90,53 +90,53 @@ const bookManager = new BookManager();
 
 /* Date */
 
-let output = document.getElementById('output');
-let numberDate = document.getElementById('date');
+const output = document.getElementById('output');
+const numberDate = document.getElementById('date');
 
-let d = new Date();
+const d = new Date();
 let day = d.getDay();
-let ndate = d.toLocaleString();
+const ndate = d.toLocaleString();
 
 switch (day) {
-    case 0:
-        day = "Sunday";
-        break;
-    case 1:
-        day = "Monday";
-        break;
-    case 2:
-        day = "Tuesday";
-        break;
-    case 3:
-        day = "Wednesday";
-        break;
-    case 4:
-        day = "Thursday";
-        break;
-    case 5:
-        day = "Friday";
-        break;
-    case 6:
-        day = "Saturday";
-        break;
+  case 0:
+    day = 'Sunday';
+    break;
+  case 1:
+    day = 'Monday';
+    break;
+  case 2:
+    day = 'Tuesday';
+    break;
+  case 3:
+    day = 'Wednesday';
+    break;
+  case 4:
+    day = 'Thursday';
+    break;
+  case 5:
+    day = 'Friday';
+    break;
+  case 6:
+    day = 'Saturday';
+    break;
 }
 
 output.innerHTML = day;
 date.innerHTML = ndate;
 
-/* Visited menu*/
+/* Visited menu */
 
-var links = document.querySelectorAll(".links li");
+const links = document.querySelectorAll('.links li');
 
-links.forEach(li => {
-  li.addEventListener("click",()=> {
+links.forEach((li) => {
+  li.addEventListener('click', () => {
     resetLinks();
-    li.classList.add("active");
-  })
-})
+    li.classList.add('active');
+  });
+});
 
 function resetLinks() {
-  links.forEach(li => {
-    li.classList.remove("active")
-  })
+  links.forEach((li) => {
+    li.classList.remove('active');
+  });
 }
