@@ -8,6 +8,7 @@
 
 body {
   background-color: #FFFCFC;
+  font-family: 'Poppins', sans-serif;
 }
 
 h1 {
@@ -163,6 +164,7 @@ input[type=text] {
   cursor: pointer;
   font-weight: 500;
   font-size: 17px;
+  margin-left: 489px;
 }
 
 .form-container {
@@ -215,6 +217,17 @@ footer a:hover {
   text-decoration: none;
   color: #5454b2;
   font-weight: 500;
+  background: #262626;
+}
+
+li:hover,
+li.active {
+  color: #5454b2;
+}
+
+li:hover a,
+li.active a {
+  color: #ddd;
 }
 
 /* Date */
